@@ -43,12 +43,6 @@ export async function POST(request: Request) {
             existingUserbyEmail.verifyCode = verifyCodeOtp;
             existingUserbyEmail.verifyCodeExpiry = expiryDate;
             await existingUserbyEmail.save();
-            //send verification email
-            const emailResponse = await sendVerificationEmail(
-              email,
-              username,
-              verifyCodeOtp
-            );
       }
     } else {
       const hashedPassword = await bcryptjs.hash(password, 10);
