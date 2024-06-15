@@ -28,7 +28,8 @@ export const authOptions: NextAuthOptions = {
           if (!user.isVerified) {
             throw new Error("Please verify your account first before login");
           }
-            const hashPassword = await bcrypt.compare(credentials.password)
+          //bcrypt
+            // const hashPassword = await bcrypt.compare(credentials.password)
         } catch (error: any) {
           throw new Error(error);
         }
